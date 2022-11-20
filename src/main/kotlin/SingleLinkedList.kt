@@ -7,10 +7,10 @@ class SingleLinkedList{
     fun display() {
         var current  = head
         while ( current!=null ){
-            print("${current.data} -->")
+            print("${current.data} --> ")
             current = current.next
         }
-        print("null")
+        println("null")
     }
 
     fun length(): Int {
@@ -68,6 +68,21 @@ class SingleLinkedList{
         val tmp = head
         head = tmp?.next
         return tmp
+    }
+
+    fun deleteLast(): ListNode? {
+        if (head == null || head?.next ==null) return head
+
+        var current = head
+        var previous : ListNode? = null
+
+        while (current?.next !=null){
+            previous = current
+            current = current.next
+        }
+
+        previous?.next = null
+        return current
     }
 
 }
