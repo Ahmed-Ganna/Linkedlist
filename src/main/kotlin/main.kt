@@ -24,7 +24,7 @@ fun main(args: Array<String>) {
     println("LLS length -> ${sll.length()}")*/
 
 
-    deleteLast()
+    deleteKey()
 }
 
 fun insertAtIndex() {
@@ -52,5 +52,14 @@ fun deleteLast() {
     sll.insertFirst(1)
     sll.display()
     sll.deleteLast()
+    sll.display()
+}
+
+fun deleteKey() {
+    val sll = SingleLinkedList()
+    sll.insertFirst(2)
+    sll.insertFirst(1)
+    sll.display()
+    sll.deleteKey(2)
     sll.display()
 }

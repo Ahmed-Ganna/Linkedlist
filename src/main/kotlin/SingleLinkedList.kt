@@ -85,4 +85,28 @@ class SingleLinkedList{
         return current
     }
 
+    fun deleteKey(key:Int){
+        var current = head
+
+        if (current !=null && current.data == key){
+            head = current.next
+            return
+        }
+
+        var tmp = current
+
+        //Not reached last one or key is not found yet
+        while (current !=null && current.data !=key){
+            tmp = current
+            current = current.next
+        }
+
+        // reached last one and key is not found
+        if (current ==null) return
+
+        tmp?.next = current.next
+
+
+    }
+
 }
