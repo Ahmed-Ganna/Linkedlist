@@ -4,7 +4,7 @@ class SingleLinkedList{
 
     class ListNode(val data : Int , var next : ListNode? = null)
 
-    fun display() {
+    fun printLinkedList() {
         var current  = head
         while ( current!=null ){
             print("${current.data} --> ")
@@ -107,6 +107,25 @@ class SingleLinkedList{
         tmp?.next = current.next
 
 
+    }
+
+    fun insertInSortedList(value: Int) : ListNode? {
+        val newNode = ListNode(value)
+
+        if (head ==null) return newNode
+
+        var current = head
+        var tmp : ListNode? = null
+
+        while (current!=null && current.data < value){
+            tmp = current
+            current = current.next
+        }
+
+        newNode.next = current
+        tmp?.next = newNode
+
+        return head
     }
 
 }

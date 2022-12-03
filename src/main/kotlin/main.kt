@@ -24,7 +24,7 @@ fun main(args: Array<String>) {
     println("LLS length -> ${sll.length()}")*/
 
 
-    deleteKey()
+    insertAtSortedList()
 }
 
 fun insertAtIndex() {
@@ -34,32 +34,43 @@ fun insertAtIndex() {
     sll.insert(1 , 3) // 3 --> 1 --> 2
     sll.insert(2 , 4) // 3 --> 4 --> 1 --> 2
 
-    sll.display()
+    sll.printLinkedList()
 }
 
 fun deleteFirst() {
     val sll = SingleLinkedList()
     sll.insertFirst(2)
     sll.insertFirst(1)
-    sll.display()
+    sll.printLinkedList()
     sll.deleteFirst()
-    sll.display()
+    sll.printLinkedList()
 }
 
 fun deleteLast() {
     val sll = SingleLinkedList()
     sll.insertFirst(2)
     sll.insertFirst(1)
-    sll.display()
+    sll.printLinkedList()
     sll.deleteLast()
-    sll.display()
+    sll.printLinkedList()
 }
 
 fun deleteKey() {
     val sll = SingleLinkedList()
     sll.insertFirst(2)
     sll.insertFirst(1)
-    sll.display()
+    sll.printLinkedList()
     sll.deleteKey(2)
-    sll.display()
+    sll.printLinkedList()
+}
+
+fun insertAtSortedList() {
+    val sll = SingleLinkedList()
+    sll.insertFirst(16)
+    sll.insertFirst(10)
+    sll.insertFirst(8)
+    sll.insertFirst(1)
+    sll.printLinkedList()
+    sll.insertInSortedList(11)
+    sll.printLinkedList()
 }
