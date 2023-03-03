@@ -70,6 +70,26 @@ class SingleLinkedList{
         return tmp
     }
 
+
+    fun delete(position: Int){
+        //position is valid and starting from 1
+        //example : 4-5-7-4-5-7
+
+        if (position==1){
+            head = head?.next
+        }else{
+            var previous  = head
+            var count = 1
+            while (count < position -1){
+                previous?.next
+                count++
+            }
+            val current = previous?.next
+            previous?.next = current?.next
+        }
+
+    }
+
     fun deleteLast(): ListNode? {
         if (head == null || head?.next ==null) return head
 
