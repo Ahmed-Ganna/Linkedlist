@@ -148,4 +148,32 @@ class SingleLinkedList{
         return head
     }
 
+    fun find(searchKey : Int) : Boolean{
+        if (head ==null) return false
+
+        var current : ListNode? = head
+        while (current !=null){
+            if (current.data == searchKey){
+                return true
+            }
+            current = current.next
+        }
+
+        return false
+    }
+
+    fun removeDuplicates(){
+        if (head ==null) return
+
+        var current : ListNode? = head
+
+        while (current?.next != null){
+            if (current.data == current.next?.data){
+                current.next = current.next?.next
+            }else{
+                current = current.next
+            }
+        }
+    }
+
 }

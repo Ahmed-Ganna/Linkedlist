@@ -21,10 +21,28 @@ fun main(args: Array<String>) {
 
     sll.display()
 
-    println("LLS length -> ${sll.length()}")*/
-
+    println("LLS length -> ${sll.length()}")
 
     deleteAtPosition()
+
+    search()
+    */
+
+    removeDuplicates()
+
+}
+
+fun search() {
+    val sll = SingleLinkedList()
+    val head =  SingleLinkedList.ListNode(3)
+    sll.head =head
+    val second = SingleLinkedList.ListNode(4)
+    val third = SingleLinkedList.ListNode(5)
+
+    sll.head?.next = second
+    second.next = third
+
+    print(sll.find(10))
 }
 
 fun insertAtIndex() {
@@ -34,6 +52,17 @@ fun insertAtIndex() {
     sll.insert(1 , 3) // 3 --> 1 --> 2
     sll.insert(2 , 4) // 3 --> 4 --> 1 --> 2
 
+    sll.printLinkedList()
+}
+
+fun removeDuplicates() {
+    val sll = SingleLinkedList()
+    sll.insert(1 , 1) // 1 --> null
+    sll.insert(2 , 2) // 1 --> 2
+    sll.insert(1 , 3) // 3 --> 1 --> 2
+    sll.insert(2 , 3) // 3 --> 4 --> 1 --> 2
+    sll.printLinkedList()
+    sll.removeDuplicates()
     sll.printLinkedList()
 }
 
