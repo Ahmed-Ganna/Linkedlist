@@ -148,6 +148,25 @@ class SingleLinkedList{
         return head
     }
 
+    fun reverse(): ListNode? {
+
+        if (head==null) return head
+
+        var current : ListNode? = head
+        var next : ListNode?
+        var previous : ListNode? = null
+
+        while (current!=null){
+            next = current.next
+            current.next = previous
+            previous = current
+            current = next
+        }
+        head = previous
+
+        return head
+    }
+
     fun find(searchKey : Int) : Boolean{
         if (head ==null) return false
 

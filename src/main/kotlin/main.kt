@@ -28,7 +28,7 @@ fun main(args: Array<String>) {
     search()
     */
 
-    removeDuplicates()
+    reverse()
 
 }
 
@@ -43,6 +43,18 @@ fun search() {
     second.next = third
 
     print(sll.find(10))
+}
+
+fun reverse() {
+    val sll = SingleLinkedList()
+    sll.insert(1 , 1)
+    sll.insert(2 , 2)
+    sll.insert(3 , 3)
+    sll.insert(4 , 4)
+
+    sll.reverse()
+
+    sll.printLinkedList()
 }
 
 fun insertAtIndex() {
