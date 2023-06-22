@@ -195,4 +195,17 @@ class SingleLinkedList{
         }
     }
 
+    fun getMiddleNode() : ListNode? {
+        if (head ==null) return null
+
+        var slowPtr : ListNode? = head
+        var fastPtr : ListNode? = head
+
+        while (slowPtr?.next!=null && fastPtr?.next !=null){
+            slowPtr = slowPtr.next
+            fastPtr = fastPtr.next?.next
+        }
+        return slowPtr
+    }
+
 }

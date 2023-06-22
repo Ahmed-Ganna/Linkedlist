@@ -28,7 +28,7 @@ fun main(args: Array<String>) {
     search()
     */
 
-    reverse()
+    getMiddleNode()
 
 }
 
@@ -57,6 +57,8 @@ fun reverse() {
     sll.printLinkedList()
 }
 
+
+
 fun insertAtIndex() {
     val sll = SingleLinkedList()
     sll.insert(1 , 1) // 1 --> null
@@ -65,6 +67,19 @@ fun insertAtIndex() {
     sll.insert(2 , 4) // 3 --> 4 --> 1 --> 2
 
     sll.printLinkedList()
+}
+
+fun getMiddleNode() {
+    val sll = SingleLinkedList()
+    sll.insertFirst(1)
+    sll.insertFirst(2)
+    sll.insertFirst(3)
+    sll.insertFirst(5)
+    sll.insertFirst(8)
+    sll.insertFirst(7)
+    sll.insertFirst(9)
+
+    print("Middle node is :" + sll.getMiddleNode()?.data)
 }
 
 fun removeDuplicates() {
