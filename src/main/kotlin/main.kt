@@ -3,32 +3,7 @@
 
 fun main(args: Array<String>) {
 
-/*    val sll = SingleLinkedList()
-    sll.head = SingleLinkedList.ListNode(3)
-    val second = SingleLinkedList.ListNode(4)
-    val third = SingleLinkedList.ListNode(5)
-    val fourth = SingleLinkedList.ListNode(7)
-
-    sll.head?.next = second
-    second.next = third
-    third.next = fourth
-
-    sll.insertFirst(11)
-    sll.insertFirst(8 )
-    sll.insertFirst(1 )
-
-    sll.insertLast(12 )
-
-    sll.display()
-
-    println("LLS length -> ${sll.length()}")
-
-    deleteAtPosition()
-
-    search()
-    */
-
-    getMiddleNode()
+    containsLoops()
 
 }
 
@@ -139,3 +114,10 @@ fun insertAtSortedList() {
     sll.insertInSortedList(11)
     sll.printLinkedList()
 }
+
+fun containsLoops() {
+    val sll = SingleLinkedList()
+    sll.createALoopIntoLinkedList()
+    print("Contains loops:"+sll.containsLoop())
+}
+

@@ -208,4 +208,33 @@ class SingleLinkedList{
         return slowPtr
     }
 
+    fun containsLoop(): Boolean {
+        var slowPtr : ListNode? = head
+        var fastPtr : ListNode? = head
+
+        while (fastPtr?.next != null){
+            slowPtr = slowPtr?.next
+            fastPtr = fastPtr.next?.next
+            if (slowPtr == fastPtr) return true
+        }
+        return false
+    }
+
+    fun createALoopIntoLinkedList() {
+        val first = ListNode(1)
+        val second = ListNode(2)
+        val third = ListNode(3)
+        val fourth = ListNode(4)
+        val fifth = ListNode(5)
+        val sixth = ListNode(6)
+
+        head = first
+        first.next = second
+        second.next = third
+        third.next = fourth
+        fourth.next = fifth
+        fifth.next = sixth
+        sixth.next = third
+    }
+
 }
