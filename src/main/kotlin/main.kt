@@ -3,7 +3,7 @@
 
 fun main(args: Array<String>) {
 
-    containsLoops()
+    startNodeInALoop()
 
 }
 
@@ -119,5 +119,11 @@ fun containsLoops() {
     val sll = SingleLinkedList()
     sll.createALoopIntoLinkedList()
     print("Contains loops:"+sll.containsLoop())
+}
+
+fun startNodeInALoop() {
+    val sll = SingleLinkedList()
+    sll.createALoopIntoLinkedList()
+    print("StartNodeInALoop:"+sll.startNodeInALoop()?.data)
 }
 

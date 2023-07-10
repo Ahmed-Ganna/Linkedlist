@@ -2,7 +2,7 @@ class SingleLinkedList{
 
     var head : ListNode ? = null
 
-    class ListNode(val data : Int , var next : ListNode? = null)
+    data class ListNode(val data : Int , var next : ListNode? = null)
 
     fun printLinkedList() {
         var current  = head
@@ -218,6 +218,28 @@ class SingleLinkedList{
             if (slowPtr == fastPtr) return true
         }
         return false
+    }
+
+    fun startNodeInALoop(): ListNode? {
+        var slowPtr : ListNode? = head
+        var fastPtr : ListNode? = head
+
+        while (fastPtr?.next != null){
+            slowPtr = slowPtr?.next
+            fastPtr = fastPtr.next?.next
+            if (slowPtr == fastPtr) return getStartingNode(slowPtr)
+        }
+        return null
+    }
+
+    private fun getStartingNode(slowPtr: ListNode?): ListNode? {
+        var temp : ListNode? = head
+        var slowPtrLocal = slowPtr
+        while (temp!=slowPtrLocal){
+            temp = temp?.next
+            slowPtrLocal = slowPtr?.next
+        }
+        return temp
     }
 
     fun createALoopIntoLinkedList() {
